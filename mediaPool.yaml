@@ -1,0 +1,750 @@
+swagger: '2.0'
+info:
+  description: >-
+    Find high resolution royalty-free images, editorial stock photos, vector art, video footage clips and stock music licensing at the richest image search photo library online.
+  version: 2.0.0
+  title: TUI Media Pool
+  contact:
+    name: Chintan Shah
+    email: chintan.shah@sptr.co
+host: mediapool.io
+basePath: /v2
+tags:
+  - name: User
+    description: Users Management
+  - name: Board
+    description: Board Management
+schemes:
+  - http
+paths:
+# User API
+  /user/save:
+    post:
+      tags:
+      - "User"
+      summary: "Signup for the user"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "searchObject"
+        description: "Signup"
+        schema:
+          type: object
+          properties:
+            adfsId: 
+              type: string
+            oneSignalId: 
+              type: string
+            name:
+              type: string
+            email:
+              type: string
+            profile:
+              type: string
+      responses:
+        200:
+          description: "Signup Successfully accessToken"
+          schema: 
+            type: object
+            properties: 
+                name:
+                    type: string
+                email: 
+                    type: string
+                boardCount: 
+                    type: string    
+        405:
+          description: "Invalid input"
+          schema:
+            type: object
+            properties: 
+                error: 
+                    type: string
+  /user/logout:
+    post:
+      tags:
+      - "User"
+      summary: "Logout"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "logout"
+        description: "Text to be searched"
+        schema:
+          type: object
+          properties:
+            adfsID: 
+              type: string
+      responses:
+        200:
+          description: "Logout Successfully"
+          schema: 
+            type: object
+            properties: 
+                data: 
+                    type: string
+        405:
+          description: "Invalid input"
+          schema: 
+            type: object
+            properties: 
+                error: 
+                    type: string
+  /user/search:
+    post:
+      tags:
+      - "User"
+      summary: "Get Users with Search"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "searchObject"
+        description: "Text to be searched"
+        schema:
+          type: object
+          properties:
+            name: 
+              type: string
+            pageNumber: 
+              type: number
+      responses:
+        200:
+          description: "Return of User in Pagination"
+          schema: 
+            type: object
+            properties: 
+                option: 
+                    type: object
+                    properties: 
+                        start:
+                            type: number
+                        count: 
+                            type: number
+                total:
+                    type: number
+                results: 
+                    type: array
+                    items:
+                        object: number
+        300:
+          description: "No data Found"
+        405:
+          description: "Invalid input"       
+          
+  /user/getProfile:
+    post:
+      tags:
+      - "User"
+      summary: "Get User Details"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "getProfile"
+        description: "User Details"
+        schema:
+          type: object
+          properties:
+            user_Id: 
+              type: string
+      responses:
+        200:
+          description: "Return of User Detail"
+        405:
+          description: "Invalid input"  
+  
+#Media API
+  /media/search:
+    post:
+      tags:
+      - "Media"
+      summary: "Media Search"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "searchObject"
+        description: "Text to be searched"
+        schema:
+          type: object
+          properties:
+            name: 
+              type: string
+            filters: 
+              type: string
+            pageNumber:
+              type: string
+      responses:
+        200:
+          description: "Return of Media Objects in Pagination"
+        300:
+          description: "No data Found"
+        405:
+          description: "Invalid input"  
+  
+  /media/getDetail:
+    post:
+      tags:
+      - "Media"
+      summary: "Get All Media with Detail"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "getObject"
+        description: "Get All Media with Detail"
+        schema:
+          type: object
+          properties:
+            media_Id: 
+              type: string
+      responses:
+        200:
+          description: "Return of Media Detail with related Media"
+        405:
+          description: "Invalid input"  
+          
+  /media/downloadMedia:
+    post:
+      tags:
+      - "Media"
+      summary: "Get All Download Media"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "rateMedia"
+        description: "Get All Download media"
+        schema:
+          type: object
+          properties:
+            media_Id: 
+              type: string
+            resolution:
+              type: string
+      responses:
+        200:
+          description: "All Images with Resolutions"
+        300:
+          description: "No data Found"
+        405:
+          description: "Invalid input"  
+  
+# Board API
+  /board/search:
+    post:
+      tags:
+      - "Board"
+      summary: "Get All Boards with Search"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "searchObject"
+        description: "Text to be searched"
+        schema:
+          type: object
+          properties:
+            name: 
+              type: string
+            pageNumber: 
+              type: number
+      responses:
+        200:
+          description: "Return of Board Objects in Pagination"
+        300:
+          description: "No data Found"
+        405:
+          description: "Invalid input"
+          
+  /board/getAll:
+    post:
+      tags:
+      - "Board"
+      summary: "Get all Board "
+      description: ""
+      parameters:
+      - in: "body"
+        name: "getAllObject"
+        description: "Get Boards of the user"
+        schema:
+          type: object
+          properties:
+            adfsId:
+              type: string
+            pageNumber: 
+              type: number
+      responses:
+        200:
+          description: "Return of Boards Objects in Pagination"
+        300:
+          description: "No data Found"
+        405:
+          description: "Invalid input"
+          
+  /board/getOne:
+    post:
+      tags:
+      - "Board"
+      summary: "Get Board"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "getObject"
+        description: "Get Board of the user"
+        schema:
+          type: object
+          properties:
+            board_Id:
+              type: string
+            pageNumber: 
+              type: number
+      responses:
+        200:
+          description: "Return of Board Objects in Pagination"
+        300:
+          description: "No data Found"
+        405:
+          description: "Invalid input"
+          
+  /board/addMedia:
+    post:
+      tags:
+      - "Board"
+      summary: "Add Media to boards"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "addMedia"
+        description: "Add Media to the board"
+        schema:
+          type: object
+          properties:
+            boolean: 
+              type: boolean
+      responses:
+        200:
+          description: "Successfully Added to the Board"
+        405:
+          description: "Error while Adding"   
+          
+          
+  /board/removeMedia:
+    post:
+      tags:
+      - "Board"
+      summary: "Remove Media from the board"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "removeMedia"
+        description: "Remove Media from the board"
+        schema:
+          type: object
+          properties:
+            boolean: 
+              type: boolean
+      responses:
+        200:
+          description: "Successfully Removed from the Board"
+        405:
+          description: "Error while Removing"    
+          
+  /board/saveBoard:
+    post:
+      tags:
+      - "Board"
+      summary: "Save changes of the Board which are done"
+      description: ""
+      parameters:
+      - in: "body"
+        name: ""
+        description: "Save changes of the Board which are done"
+        schema:
+          type: object
+          properties:
+            name: 
+              type: string
+      responses:
+        200:
+          description: "Saved Successfully"
+        405:
+          description: "Error Saving the Data"          
+          
+  /board/removeBoard:
+    post:
+      tags:
+      - "Board"
+      summary: "Save changes of the Board which are done"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "SaveBoard"
+        description: "Save changes of the Board which are done"
+        schema:
+          type: object
+          properties:
+            _id:
+              type: string
+      responses:
+        200:
+          description: "Saved Successfully"
+        405:
+          description: "Error Saving the Data"
+          
+  /board/addCommentToBoard:
+    post:
+      tags:
+      - "Board"
+      summary: "Add comment to Board"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "SaveComment"
+        description: "Save comment to the board"
+        schema:
+          type: object
+          properties:
+            user_id:
+              type: string
+            comment:
+              type: string
+            board_id:
+              type: string
+      responses:
+        200:
+          description: "Saved Successfully"
+        405:
+          description: "Error Saving the Data"   
+          
+  /board/getBoardComment:
+    post:
+      tags:
+      - "Board"
+      summary: "Get Comments of the Board"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "getBoard"
+        description: "Like and unlike To Board"
+        schema:
+          type: object
+          properties:
+            user_id:
+              type: string
+      responses:
+        200:
+          description: "Return of Comment in Pagination "
+        300:
+          description: "No data Found"
+        405:
+          description: "Invalid Request"  
+          
+  /board/addLike:
+    post:
+      tags:
+      - "Board"
+      summary: "Like and Unlike to Board"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "SaveComment"
+        description: "Like and unlike To Board"
+        schema:
+          type: object
+          properties:
+            boolean:
+              type: boolean
+      responses:
+        200:
+          description: "Like true and Unlike False"
+        405:
+          description: "Error Saving the Data"  
+
+  /board/shareBoard:
+    post:
+      tags:
+      - "Board"
+      summary: "Like and Unlike to Board"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "ShareBoard"
+        description: "Like and unlike To Board"
+        schema:
+          type: object
+          properties:
+            emails:
+              type: string
+            user:
+              type: string  
+            board:
+              type: string  
+      responses:
+        200:
+          description: "Successfully Shared"
+        405:
+          description: "Error Shared"  
+          
+# Basket API
+  /basket/addTo:
+    post:
+      tags:
+      - "Basket"
+      summary: "Add to Basket"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "AddBasket"
+        description: "Add to Basket"
+        schema:
+          type: object
+          properties:
+            media:
+              type: string
+            resolution:
+              type: string
+      responses:
+        200:
+          description: "Add to basket in Boolean format"
+        405:
+          description: "Error in Adding Basket"      
+          
+          
+  /basket/remove:
+    post:
+      tags:
+      - "Basket"
+      summary: "Remove From Basket"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "RemoveBasket"
+        description: "Remove from Basket"
+        schema:
+          type: object
+          properties:
+            media:
+              type: string
+            resolution:
+              type: string
+      responses:
+        200:
+          description: "Remove from basket in Boolean format"
+        405:
+          description: "Error in Removing Basket"  
+          
+  /basket/getAll:
+    post:
+      tags:
+      - "Basket"
+      summary: "Get All Basket"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "GetAllBasket"
+        description: "Get All Basket"
+        schema:
+          type: object
+          properties:
+            user_Id:
+              type: string
+      responses:
+        200:
+          description: "Get All basket with pagination"
+        300:
+          description: "No data found"
+        405:
+          description: "Invalid data" 
+          
+  /basket/confirm:
+    post:
+      tags:
+      - "Basket"
+      summary: "Confirm Basket"
+      description: ""
+      parameters:
+      - in: "body"
+        name: "ConfirmBasket"
+        description: "Confirm Basket"
+        schema:
+          type: object
+          properties:
+            boolean:
+              type: boolean
+      responses:
+        200:
+          description: "Comforming the basket"
+        405:
+          description: "Error in Comformation" 
+      
+securityDefinitions:
+  mediapool_auth:
+    type: "oauth2"
+    authorizationUrl: "http://mediapool.io/v2/oauth/dialog"
+    flow: "implicit"
+    scopes:
+      write:pets: "modify pets in your account"
+      read:pets: "read your pets"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  User:
+    type: object
+    properties:
+      _id:
+        type: string
+        example: 507f1f77bcf86cd799439011
+      name:
+        type: string 
+        example: chintan
+      email:
+        type: string  
+        format: email  
+        example: chintan.shah@sptr.co
+      accessLevel:
+        type: string
+      onesignal:
+        type: string  
+      lastLogin:
+        type: string
+        format: date-time
+      boardCount:
+        type: number
+      basket:
+        type: array
+        items:
+          type: string
+          description: Media
+  Media:
+    type: object
+    properties:
+      _id:
+        type: number
+      name:
+        type: string
+      classifications: 
+        type: array
+        items:
+          type: string
+      fields: 
+        type: array
+        items:
+          type: object
+          properties:
+            field: 
+              type: string
+            value:
+              type: string
+      url:
+        type: string
+      mimeType:
+        type: string
+      files:
+        type: array
+        items:
+          type: object
+          properties:
+            field: 
+              type: string
+            value:
+              type: string
+  Board:
+    type: object
+    properties:
+      _id:
+        type: string
+      user:
+        type: string
+        description: User
+      medias:
+        type: object
+        properties: 
+          media: 
+            type: string 
+            description: Media
+          sequence: 
+            type: number
+      comment:
+        type: object
+        properties: 
+          user: 
+            type: string
+            description: User
+          timestamp: 
+            type: string
+            format: date-time
+      urlSlug:
+        type: string
+  ConfirmedBasket:
+    type: object
+    properties:
+      _id:
+        type: number
+      user:
+        type: string
+        description: User
+      media:
+        type: object
+        properties: 
+          media: 
+            type: string
+            description: Media
+      zip:
+        type: string
+      expiryTime: 
+        type: string
+        format: date-time
+      zipCompletionTime: 
+        type: string
+        format: date-time  
+      completionTime:
+        type: string
+        format: date-time
+  Config:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      value:
+        type: string
+  FeaturesBoard:
+    type: object
+    properties:
+      _id: 
+        type: string
+      board:
+        type: string
+        description: Board
+      sequence: 
+        type: number
+  SearchLogs:
+    type: object
+    properties:
+      _id: 
+        type: string
+      user:
+        type: string
+        description: User
+      search:
+        type: string
+      filters:
+        type: string
+      timestamp:
+        type: string
+        format: date-time
+  MediaLogs:
+    type: object
+    properties: 
+      id: 
+        type: string
+      user:
+        type: string
+        description: User
+      media:
+        type: string
+        description: User
+      event:
+        type: string
+      timestamp:
+        type: string
+        format: date-time
