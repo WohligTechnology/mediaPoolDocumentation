@@ -131,7 +131,6 @@ paths:
           description: "No data Found"
         405:
           description: "Invalid input"       
-          
   /user/getProfile:
     post:
       tags:
