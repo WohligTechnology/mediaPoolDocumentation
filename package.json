@@ -54,7 +54,7 @@
         "json-stable-stringify": "^1.0.1",
         "lodash": "^4.2.1",
         "marked": "^0.3.5",
-        "request-sync": "^1.0.0",
+        "sync-request": "^1.0.0",
         "tmp": "0.0.31",
         "trace": "^1.1.0"
     },
