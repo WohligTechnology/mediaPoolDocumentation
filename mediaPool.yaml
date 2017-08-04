@@ -23,7 +23,7 @@ paths:
     post:
       tags:
       - "User"
-      summary: "Signup for the user"
+      summary: "Signup for the User"
       description: ""
       parameters:
       - in: "body"
@@ -307,12 +307,12 @@ paths:
     post:
       tags:
       - "Board"
-      summary: "Add Media to boards"
+      summary: "Add Media to Board"
       description: ""
       parameters:
       - in: "body"
         name: "addMedia"
-        description: "Add Media to the board"
+        description: "Add Media to the Board"
         schema:
           type: object
           properties:
@@ -329,12 +329,12 @@ paths:
     post:
       tags:
       - "Board"
-      summary: "Remove Media from the board"
+      summary: "Remove Media from Board"
       description: ""
       parameters:
       - in: "body"
         name: "removeMedia"
-        description: "Remove Media from the board"
+        description: "Remove Media from Board"
         schema:
           type: object
           properties:
@@ -342,9 +342,9 @@ paths:
               type: boolean
       responses:
         200:
-          description: "Successfully Removed from the Board"
+          description: "Successfully Removed from Board"
         405:
-          description: "Error while Removing"    
+          description: "Error while Removing Media"    
           
   /board/saveBoard:
     post:

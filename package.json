@@ -9,7 +9,7 @@
     "scripts": {
         "build": "spectacle -l tui.png -a ./app mediaPool.yaml",
         "test": "mocha && node bin/spectacle -l test/fixtures/cheese.png test/fixtures/cheese.yml",
-        "develop": "spectacle -d -l tui.png -a ./app mediaPool.yaml",
+        "develop": "spectacle -d -l tui.png -a ./app mediaPool.yaml -c app/lib/config.js",
         "start": "spectacle -s -l tui.png -a ./app mediaPool.yaml"
     },
     "repository": {
