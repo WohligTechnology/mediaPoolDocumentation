@@ -7,10 +7,10 @@
         "spectacle": "bin/spectacle.js"
     },
     "scripts": {
-        "build": "spectacle -d -l tui.png -a ./app mediaPool.yaml",
+        "build": "spectacle -l tui.png -a ./app mediaPool.yaml",
         "test": "mocha && node bin/spectacle -l test/fixtures/cheese.png test/fixtures/cheese.yml",
-        "develop": "spectacle -d",
-        "start": "spectacle -s"
+        "develop": "spectacle -d -l tui.png -a ./app mediaPool.yaml",
+        "start": "spectacle -s -l tui.png -a ./app mediaPool.yaml"
     },
     "repository": {
         "type": "git",
