@@ -371,12 +371,12 @@ paths:
     post:
       tags:
       - "Board"
-      summary: "Save changes of the Board which are done"
+      summary: "Remove Board"
       description: ""
       parameters:
       - in: "body"
         name: "SaveBoard"
-        description: "Save changes of the Board which are done"
+        description: "Remove Board"
         schema:
           type: object
           properties:
@@ -384,9 +384,9 @@ paths:
               type: string
       responses:
         200:
-          description: "Saved Successfully"
+          description: "Board Removed Successfully"
         405:
-          description: "Error Saving the Data"
+          description: "Error Removing Board"
           
   /board/addCommentToBoard:
     post:
@@ -461,12 +461,12 @@ paths:
     post:
       tags:
       - "Board"
-      summary: "Like and Unlike to Board"
+      summary: "Share Board"
       description: ""
       parameters:
       - in: "body"
         name: "ShareBoard"
-        description: "Like and unlike To Board"
+        description: "share Board"
         schema:
           type: object
           properties:
