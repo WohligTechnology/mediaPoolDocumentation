@@ -973,7 +973,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
       -o-text-overflow: ellipsis;
       text-overflow: ellipsis; }
       #spectacle #sidebar a.active {
-        color: #2199e8; }
+        color: #db2128; }
     #spectacle #sidebar ul {
       list-style-type: none;
       padding: 0;
@@ -1097,6 +1097,10 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
         opacity: 0.8; }
         #spectacle article .doc-examples h5 span {
           opacity: 0.5; }
+        #spectacle article .doc-examples h5 a {
+          color: #fefefe;
+          opacity: 0.5;
+          font-style: italic; }
       @media screen and (max-width: 63.9375em) {
         #spectacle article .doc-examples:not(:empty) {
           margin-top: 1.5rem;
@@ -1106,7 +1110,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
         display: block;
         margin-bottom: 1.5rem;
         padding: 1.5rem;
-        font-family: Consolas,"Liberation Mono",Courier,monospace;
+        font-family: Consolas, "Liberation Mono", Courier, monospace;
         font-weight: inherit;
         color: inherit;
         background-color: transparent;

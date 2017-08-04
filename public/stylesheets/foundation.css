@@ -1231,12 +1231,12 @@ h6 {
     font-size: 1.0526315789rem; } }
 
 a {
-  color: #2199e8;
+  color: #db2128;
   text-decoration: none;
   line-height: inherit;
   cursor: pointer; }
   a:hover, a:focus {
-    color: #1585cf; }
+    color: #bc1c22; }
   a img {
     border: 0; }
 
@@ -1436,12 +1436,12 @@ kbd {
   padding: 0.85em 1em;
   margin: 0 0 1rem 0;
   font-size: 0.9rem;
-  background-color: #2199e8;
+  background-color: #db2128;
   color: #fff; }
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
-    background-color: #1583cc;
+    background-color: #ba1c22;
     color: #fff; }
   .button.tiny {
     font-size: 0.6rem; }
@@ -1455,10 +1455,10 @@ kbd {
     margin-left: 0;
     margin-right: 0; }
   .button.primary {
-    background-color: #2199e8;
+    background-color: #db2128;
     color: #fff; }
     .button.primary:hover, .button.primary:focus {
-      background-color: #147cc0;
+      background-color: #af1a20;
       color: #fff; }
   .button.secondary {
     background-color: #777;
@@ -1485,19 +1485,19 @@ kbd {
       background-color: #cc8b00;
       color: #fff; }
   .button.hollow {
-    border: 1px solid #2199e8;
-    color: #2199e8; }
+    border: 1px solid #db2128;
+    color: #db2128; }
     .button.hollow, .button.hollow:hover, .button.hollow:focus {
       background-color: transparent; }
     .button.hollow:hover, .button.hollow:focus {
-      border-color: #0c4d78;
-      color: #0c4d78; }
+      border-color: #6e1114;
+      color: #6e1114; }
     .button.hollow.primary {
-      border: 1px solid #2199e8;
-      color: #2199e8; }
+      border: 1px solid #db2128;
+      color: #db2128; }
       .button.hollow.primary:hover, .button.hollow.primary:focus {
-        border-color: #0c4d78;
-        color: #0c4d78; }
+        border-color: #6e1114;
+        color: #6e1114; }
     .button.hollow.secondary {
       border: 1px solid #777;
       color: #777; }
@@ -1856,7 +1856,7 @@ select {
   white-space: nowrap;
   cursor: default;
   border-radius: 0;
-  background: #2199e8;
+  background: #db2128;
   color: #fefefe; }
   .label.secondary {
     background: #777;
