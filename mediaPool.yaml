@@ -591,6 +591,7 @@ definitions:
     properties:
       _id:
         type: string
+        format: objectId
         example: 507f1f77bcf86cd799439011
       name:
         type: string 
@@ -601,31 +602,48 @@ definitions:
         example: chintan.shah@sptr.co
       accessLevel:
         type: string
+        example: Admin
       onesignal:
         type: string  
+        example: 507f1f77bcf86cd799439011
       lastLogin:
         type: string
         format: date-time
+        example: 2016-10-05T14:35:33.593Z
       boardCount:
         type: number
+        example: 102
       basket:
         type: array
+        description: Array of Media ObjectId's
         items:
           type: string
+          format: objectId
           description: Media
+          example: 507f1f77bcf86cd799439011
   Media:
     type: object
     properties:
       _id:
         type: number
+        format: objectId
+        example: 507f1f77bcf86cd799439011
       name:
         type: string
+        example: Robinson Club Landskron (AC1813116)
       classifications: 
         type: array
+        description: Array of Classifications
+        example:
+            - /Tags/Product/TUI Chain/ROBINSON
+            - /Tags/Product/Market Concept/ROBINSON
         items:
           type: string
       fields: 
         type: array
+        example:
+            imageWidth: 6144.000000
+            imageHeight: 4096.000000
         items:
           type: object
           properties:
@@ -635,8 +653,21 @@ definitions:
               type: string
       url:
         type: string
+        example: robinson-club-landskron
       mimeType:
         type: string
+        example: "image/jpeg"
+      mediaType:
+        type: string
+        example: "Image"
+      keyword: 
+        type: array
+        example: 
+          - Accommodations
+          - General facilities
+        items:
+          type: string
+        
       files:
         type: array
         items:
@@ -646,105 +677,171 @@ definitions:
               type: string
             value:
               type: string
+        example:
+          "url": "http://cdn.content.tuigroup.com/tuidamdevs3/2017_6/30_10/937cee9e-dfcd-4d34-81ff-a7a200a76806/lk58_4824.jpg"
+          thumbnail: "http://cdn.content.tuigroup.com/tuidamdevs3/2017_6/30_10/937cee9e-dfcd-4d34-81ff-a7a200a76806/lk58_4824Thumbnail.jpg"
   Board:
     type: object
     properties:
       _id:
         type: string
+        format: objectId
+        example: 507f1f77bcf86cd799439011
+      name:
+        type: string
+        example: "Beaches in Europe"
       user:
         type: string
         description: User
+        format: objectId
+        example: 507f1f77bcf86cd799439011
       medias:
-        type: object
-        properties: 
-          media: 
-            type: string 
-            description: Media
-          sequence: 
-            type: number
+        description: Array of Media Objects and Sequence 
+        type: array
+        items:
+          type: object
+          properties: 
+            media: 
+              type: string 
+              description: Media
+              format: objectId
+            sequence: 
+              type: number
+        example: 
+          - media: 507f1f77bcf86cd799439011
+            sequence: 0
+          - media: 507f1f77bcf86cd799439011
+            sequence: 1
+          - media: 507f1f77bcf86cd799439011
+            sequence: 2
       comment:
         type: object
         properties: 
           user: 
             type: string
             description: User
+            format: objectId
+            example: 507f1f77bcf86cd799439011
           timestamp: 
             type: string
             format: date-time
+            example: 2016-10-05T14:35:33.593Z
+          comment: 
+            type: string
+            example: "First image of the board is nice"
       urlSlug:
         type: string
+        example: "beaches-in-europe"
+      
   ConfirmedBasket:
     type: object
     properties:
       _id:
         type: number
+        format: objectId
+        example: 507f1f77bcf86cd799439011
       user:
         type: string
         description: User
+        format: objectId
+        example: 507f1f77bcf86cd799439011
       media:
-        type: object
-        properties: 
-          media: 
-            type: string
-            description: Media
+        type: array
+        description: Array of Media Object
+        example: 
+          - 507f1f77bcf86cd799439011
+          - 507f1f77bcf86cd799439011
+          - 507f1f77bcf86cd799439011
+          - 507f1f77bcf86cd799439011
+        items: 
+          type: object
+          properties: 
+            media: 
+              type: string
+              description: Media
       zip:
         type: string
+        example: "507f1f77bcf86cd799439011.zip"
       expiryTime: 
         type: string
         format: date-time
+        example: 2016-10-05T14:35:33.593Z
       zipCompletionTime: 
         type: string
         format: date-time  
-      completionTime:
-        type: string
-        format: date-time
+        example: 2016-10-05T14:35:33.593Z
   Config:
     type: object
     properties:
       _id:
         type: string
+        format: objectID
+        example: "507f1f77bcf86cd799439011"
       name:
         type: string
+        example: about
       value:
         type: string
+        example: Find high resolution royalty-free images, editorial stock photos, vector art, video footage clips and stock music licensing at the richest image search photo library online.
   FeaturesBoard:
     type: object
     properties:
       _id: 
         type: string
+        format: objectID
+        example: "507f1f77bcf86cd799439011"
       board:
         type: string
+        format: objectID
+        example: "507f1f77bcf86cd799439011"
         description: Board
       sequence: 
         type: number
+        example: 1
   SearchLogs:
     type: object
     properties:
       _id: 
         type: string
+        format: objectID
+        example: "507f1f77bcf86cd799439011"
       user:
         type: string
+        format: objectID
+        example: "507f1f77bcf86cd799439011"
         description: User
       search:
         type: string
+        example: beach
       filters:
         type: string
+        exmaple: 
+          classifications: /Geotree/Austria (LO68010419)/Carinthia (LO36653637)/Villach
       timestamp:
         type: string
         format: date-time
+        example: 2016-10-05T14:35:33.593Z
   MediaLogs:
     type: object
     properties: 
       id: 
         type: string
+        format: objectID
+        example: "507f1f77bcf86cd799439011"
       user:
         type: string
         description: User
+        format: objectID
+        example: "507f1f77bcf86cd799439011"
       media:
         type: string
         description: User
+        format: objectID
+        example: "507f1f77bcf86cd799439011"
       event:
         type: string
+        example: "ViewDetailPage"
       timestamp:
         type: string
         format: date-time
+        example: 2016-10-05T14:35:33.593Z

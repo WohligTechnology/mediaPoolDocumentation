@@ -2048,6 +2048,7 @@
                     <dt data-property-name="_id">
                       <span class="json-property-name">_id:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectId)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dt data-property-name="name">
@@ -2087,6 +2088,9 @@
                       <span class="json-property-type">string[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>Array of Media ObjectId&#39;s</p>
+                    </dd>
                   </dl>
                 </section>
               </div>
@@ -2097,12 +2101,12 @@
   <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
   <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;chintan&quot;</span>,
   <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;chintan.shah@sptr.co&quot;</span>,
-  <span class="hljs-attr">&quot;accessLevel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;onesignal&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;lastLogin&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
-  <span class="hljs-attr">&quot;boardCount&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
+  <span class="hljs-attr">&quot;accessLevel&quot;</span>: <span class="hljs-string">&quot;Admin&quot;</span>,
+  <span class="hljs-attr">&quot;onesignal&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;lastLogin&quot;</span>: <span class="hljs-string">&quot;2016-10-05T14:35:33.593Z&quot;</span>,
+  <span class="hljs-attr">&quot;boardCount&quot;</span>: <span class="hljs-number">102</span>,
   <span class="hljs-attr">&quot;basket&quot;</span>: [
-    <span class="hljs-string">&quot;string&quot;</span>
+    <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>
   ]
 }
 </code></pre>
@@ -2126,6 +2130,7 @@
                     <dt data-property-name="_id">
                       <span class="json-property-name">_id:</span>
                       <span class="json-property-type">number</span>
+                      <span class="json-property-format">(objectId)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dt data-property-name="name">
@@ -2138,6 +2143,9 @@
                       <span class="json-property-type">string[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>Array of Classifications</p>
+                    </dd>
                     <dt data-property-name="fields">
                       <span class="json-property-name">fields:</span>
                       <span class="json-property-type">object[]</span>
@@ -2153,6 +2161,16 @@
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dt data-property-name="mediaType">
+                      <span class="json-property-name">mediaType:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="keyword">
+                      <span class="json-property-name">keyword:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
                     <dt data-property-name="files">
                       <span class="json-property-name">files:</span>
                       <span class="json-property-type">object[]</span>
@@ -2165,25 +2183,27 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Robinson Club Landskron (AC1813116)&quot;</span>,
   <span class="hljs-attr">&quot;classifications&quot;</span>: [
-    <span class="hljs-string">&quot;string&quot;</span>
+    <span class="hljs-string">&quot;/Tags/Product/TUI Chain/ROBINSON&quot;</span>,
+    <span class="hljs-string">&quot;/Tags/Product/Market Concept/ROBINSON&quot;</span>
   ],
-  <span class="hljs-attr">&quot;fields&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
+  <span class="hljs-attr">&quot;fields&quot;</span>: {
+    <span class="hljs-attr">&quot;imageWidth&quot;</span>: <span class="hljs-number">6144</span>,
+    <span class="hljs-attr">&quot;imageHeight&quot;</span>: <span class="hljs-number">4096</span>
+  },
+  <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;robinson-club-landskron&quot;</span>,
+  <span class="hljs-attr">&quot;mimeType&quot;</span>: <span class="hljs-string">&quot;image/jpeg&quot;</span>,
+  <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;Image&quot;</span>,
+  <span class="hljs-attr">&quot;keyword&quot;</span>: [
+    <span class="hljs-string">&quot;Accommodations&quot;</span>,
+    <span class="hljs-string">&quot;General facilities&quot;</span>
   ],
-  <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;mimeType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;files&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ]
+  <span class="hljs-attr">&quot;files&quot;</span>: {
+    <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;http://cdn.content.tuigroup.com/tuidamdevs3/2017_6/30_10/937cee9e-dfcd-4d34-81ff-a7a200a76806/lk58_4824.jpg&quot;</span>,
+    <span class="hljs-attr">&quot;thumbnail&quot;</span>: <span class="hljs-string">&quot;http://cdn.content.tuigroup.com/tuidamdevs3/2017_6/30_10/937cee9e-dfcd-4d34-81ff-a7a200a76806/lk58_4824Thumbnail.jpg&quot;</span>
+  }
 }
 </code></pre>
                   <!-- </div> -->
@@ -2206,11 +2226,18 @@
                     <dt data-property-name="_id">
                       <span class="json-property-name">_id:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectId)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="name">
+                      <span class="json-property-name">name:</span>
+                      <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dt data-property-name="user">
                       <span class="json-property-name">user:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectId)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
@@ -2218,9 +2245,12 @@
                     </dd>
                     <dt data-property-name="medias">
                       <span class="json-property-name">medias:</span>
-                      <span class="json-property-type">object</span>
+                      <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>Array of Media Objects and Sequence</p>
+                    </dd>
                     <dt data-property-name="comment">
                       <span class="json-property-name">comment:</span>
                       <span class="json-property-type">object</span>
@@ -2238,17 +2268,29 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;medias&quot;</span>: {
-    <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;sequence&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>
-  },
+  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Beaches in Europe&quot;</span>,
+  <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;medias&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+      <span class="hljs-attr">&quot;sequence&quot;</span>: <span class="hljs-number">0</span>
+    },
+    {
+      <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+      <span class="hljs-attr">&quot;sequence&quot;</span>: <span class="hljs-number">1</span>
+    },
+    {
+      <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+      <span class="hljs-attr">&quot;sequence&quot;</span>: <span class="hljs-number">2</span>
+    }
+  ],
   <span class="hljs-attr">&quot;comment&quot;</span>: {
-    <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>
+    <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+    <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;2016-10-05T14:35:33.593Z&quot;</span>,
+    <span class="hljs-attr">&quot;comment&quot;</span>: <span class="hljs-string">&quot;First image of the board is nice&quot;</span>
   },
-  <span class="hljs-attr">&quot;urlSlug&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;urlSlug&quot;</span>: <span class="hljs-string">&quot;beaches-in-europe&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -2271,11 +2313,13 @@
                     <dt data-property-name="_id">
                       <span class="json-property-name">_id:</span>
                       <span class="json-property-type">number</span>
+                      <span class="json-property-format">(objectId)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dt data-property-name="user">
                       <span class="json-property-name">user:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectId)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
@@ -2283,9 +2327,12 @@
                     </dd>
                     <dt data-property-name="media">
                       <span class="json-property-name">media:</span>
-                      <span class="json-property-type">object</span>
+                      <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>Array of Media Object</p>
+                    </dd>
                     <dt data-property-name="zip">
                       <span class="json-property-name">zip:</span>
                       <span class="json-property-type">string</span>
@@ -2303,12 +2350,6 @@
                       <span class="json-property-format">(date-time)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="completionTime">
-                      <span class="json-property-name">completionTime:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-format">(date-time)</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
                   </dl>
                 </section>
               </div>
@@ -2316,15 +2357,17 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
-  <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;media&quot;</span>: {
-    <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-  },
-  <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;expiryTime&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
-  <span class="hljs-attr">&quot;zipCompletionTime&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
-  <span class="hljs-attr">&quot;completionTime&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>
+  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;media&quot;</span>: [
+    <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+    <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+    <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+    <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011.zip&quot;</span>,
+  <span class="hljs-attr">&quot;expiryTime&quot;</span>: <span class="hljs-string">&quot;2016-10-05T14:35:33.593Z&quot;</span>,
+  <span class="hljs-attr">&quot;zipCompletionTime&quot;</span>: <span class="hljs-string">&quot;2016-10-05T14:35:33.593Z&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -2347,6 +2390,7 @@
                     <dt data-property-name="_id">
                       <span class="json-property-name">_id:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectID)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dt data-property-name="name">
@@ -2366,9 +2410,9 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;about&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;Find high resolution royalty-free images, editorial stock photos, vector art, video footage clips and stock music licensing at the richest image search photo library online.&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -2391,11 +2435,13 @@
                     <dt data-property-name="_id">
                       <span class="json-property-name">_id:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectID)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dt data-property-name="board">
                       <span class="json-property-name">board:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectID)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
@@ -2413,9 +2459,9 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;board&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;sequence&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>
+  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;board&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;sequence&quot;</span>: <span class="hljs-number">1</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -2438,11 +2484,13 @@
                     <dt data-property-name="_id">
                       <span class="json-property-name">_id:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectID)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dt data-property-name="user">
                       <span class="json-property-name">user:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectID)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
@@ -2471,11 +2519,11 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;search&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;search&quot;</span>: <span class="hljs-string">&quot;beach&quot;</span>,
   <span class="hljs-attr">&quot;filters&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;2016-10-05T14:35:33.593Z&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -2498,11 +2546,13 @@
                     <dt data-property-name="id">
                       <span class="json-property-name">id:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectID)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dt data-property-name="user">
                       <span class="json-property-name">user:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectID)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
@@ -2511,6 +2561,7 @@
                     <dt data-property-name="media">
                       <span class="json-property-name">media:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-format">(objectID)</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
@@ -2534,11 +2585,11 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;event&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;user&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
+  <span class="hljs-attr">&quot;event&quot;</span>: <span class="hljs-string">&quot;ViewDetailPage&quot;</span>,
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;2016-10-05T14:35:33.593Z&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
