@@ -23,7 +23,7 @@ paths:
     post:
       tags:
       - "User"
-      summary: "Signup for the User"
+      summary: "Redirection from ADFS"
       description: ""
       parameters:
       - in: "body"
@@ -34,73 +34,76 @@ paths:
           properties:
             adfsId: 
               type: string
+              example: 507f1f77bcf86cd799439011
             oneSignalId: 
               type: string
+              example: 507f1f77bcf86cd799439011
             name:
               type: string
+              example: Chintan Shah
             email:
               type: string
-            profile:
+              example: chintan@wohlig.com
+            profilePic:
               type: string
+              example: http://mediapool.io:4400/images/tui.png
       responses:
         200:
-          description: "Signup Successfully accessToken"
+          description: "Saved Sucessfully and Get AccessToken"
+          example: 
+              name: Chintan Shah
+              email: chintan@wohlig.com
+              boardCount: 2
+              accessToken: 829739238729
           schema: 
             type: object
-            properties: 
-                name:
-                    type: string
-                email: 
-                    type: string
-                boardCount: 
-                    type: string    
         405:
-          description: "Invalid input"
+          description: "Invalid Input"
           schema:
             type: object
-            properties: 
-                error: 
-                    type: string
+          example: 
+              error: "Invalid Input"
   /user/logout:
     post:
       tags:
       - "User"
       summary: "Logout"
-      description: ""
+      description: "Logout User and Remove the user accessToken"
       parameters:
-      - in: "body"
-        name: "logout"
-        description: "Text to be searched"
-        schema:
-          type: object
-          properties:
-            adfsID: 
-              type: string
+      - in: "header"
+        description: User Access Token
+        name: "accessToken"
+        type: string
+        example: 829739238729
       responses:
         200:
           description: "Logout Successfully"
           schema: 
             type: object
-            properties: 
-                data: 
-                    type: string
+          example: 
+              data: Logout Successful
         405:
-          description: "Invalid input"
+          description: "Invalid Input"
           schema: 
             type: object
-            properties: 
-                error: 
-                    type: string
+          example: 
+              error: "Invalid Input"
   /user/search:
     post:
       tags:
       - "User"
-      summary: "Get Users with Search"
-      description: ""
+      summary: "Search Users"
+      description: "Get users with name Search with Pagination"
       parameters:
+      - in: "header"
+        description: User Access Token
+        name: "accessToken"
+        type: string
       - in: "body"
         name: "searchObject"
-        description: "Text to be searched"
+        example: 
+          name: Chi
+          pageNumber: 2
         schema:
           type: object
           properties:
@@ -113,6 +116,22 @@ paths:
           description: "Return of User in Pagination"
           schema: 
             type: object
+            example:
+              options:
+                start: 0
+                count: 5
+              total: 1209
+              results:
+                - _id: 507f1f77bcf86cd799439011
+                  name: Chintan Shah
+                - _id: 507f1f77bcf86cd799439011
+                  name: Chirag Shah
+                - _id: 507f1f77bcf86cd799439011
+                  name: Chiraag Shah
+                - _id: 507f1f77bcf86cd799439011
+                  name: Chinntan Shah
+                - _id: 507f1f77bcf86cd799439011
+                  name: Jagruti Chintan
             properties: 
                 option: 
                     type: object
@@ -128,9 +147,17 @@ paths:
                     items:
                         object: number
         300:
-          description: "No data Found"
+          description: "No Data Found"
+          schema: 
+            type: object
+          example: 
+              data: "No Data Found"
         405:
-          description: "Invalid input"       
+          description: "Invalid Input"
+          schema: 
+            type: object
+          example: 
+              error: "Invalid Input"   
   /user/getProfile:
     post:
       tags:
@@ -138,21 +165,28 @@ paths:
       summary: "Get User Details"
       description: ""
       parameters:
-      - in: "body"
-        name: "getProfile"
-        description: "User Details"
-        schema:
-          type: object
-          properties:
-            user_Id: 
-              type: string
+      - in: "header"
+        description: User Access Token
+        name: "accessToken"
+        type: string
       responses:
         200:
           description: "Return of User Detail"
+          schema: 
+            type: object
+          example:
+            name: Chintan Shah
+            email: chintan@wohlig.com
+            boardCount: 2
+            profilePic: http://mediapool.io:4400/images/tui.png
         405:
-          description: "Invalid input"  
+          description: "Invalid Input"
+          schema:
+            type: object
+          example: 
+              error: "Invalid Input"
   
-#Media API
+# Media API
   /media/search:
     post:
       tags:
@@ -572,6 +606,20 @@ paths:
           description: "Comforming the basket"
         405:
           description: "Error in Comformation" 
+# Cron
+  /parseDamXML:
+    get:
+      tags:
+      - "Cron"
+      summary: "Parsing of Dam XML for Data"
+      description: >-
+        1. Get all the new XML <br/>
+        2. Parse the XML <br/>
+        3. Validate the Values <br/>
+        4. Save the details in Mongodb <br/>
+        5. Save the Details in Solr as well
+
+
       
 securityDefinitions:
   mediapool_auth:
@@ -593,9 +641,15 @@ definitions:
         type: string
         format: objectId
         example: 507f1f77bcf86cd799439011
+      accessToken:
+        type: string
+        example: 829739238729
       name:
         type: string 
         example: chintan
+      profilePic:
+        type: string 
+        example: http://mediapool.io:4400/images/tui.png
       email:
         type: string  
         format: email  
