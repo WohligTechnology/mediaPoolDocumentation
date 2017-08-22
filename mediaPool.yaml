@@ -606,20 +606,32 @@ paths:
           description: "Comforming the basket"
         405:
           description: "Error in Comformation" 
-# Cron
+# Dexter Jobs
   /parseDamXML:
     get:
       tags:
       - "Cron"
-      summary: "Parsing of Dam XML for Data"
+      summary: "Parsing of Dam XML and Storing"
       description: >-
         1. Get all the new XML <br/>
         2. Parse the XML <br/>
         3. Validate the Values <br/>
         4. Save the details in Mongodb <br/>
-        5. Save the Details in Solr as well
-
-
+  /syncMongoSolr:
+    get:
+      tags:
+      - "Cron"
+      summary: "Sync Mongodb Database with Solr"
+      description: >-
+        1. Save the Details in Solr as well  <br/>
+  /removingExpiredZip:
+    get:
+      tags:
+      - "Cron"
+      summary: "Remove all the Zip which are expired."
+      description: >-
+        1. Find all the zip greater then now()<br/>
+        2. Delete all the zip file from s3 which are greater than now() <br/>
       
 securityDefinitions:
   mediapool_auth:
