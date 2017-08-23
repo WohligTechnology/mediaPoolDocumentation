@@ -649,17 +649,6 @@ definitions:
   User:
     type: object
     properties:
-      addreses:
-        type: array
-        items:
-          type: object
-          properties: 
-            name: 
-              type: string
-            pincode:
-              type: number
-            state:
-              type: string
       _id:
         type: string
         format: objectId
