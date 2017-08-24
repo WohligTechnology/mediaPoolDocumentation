@@ -124,15 +124,13 @@
             </ul>
           </section>
           <h5>Schema Definitions</h5>
-          <a href="#definition-User"> User </a>
-          <a href="#definition-Media"> Media </a>
-          <a href="#definition-Board"> Board </a>
-          <a href="#definition-ConfirmedBasket"> ConfirmedBasket </a>
-          <a href="#definition-Config"> Config </a>
-          <a href="#definition-FeaturesBoard"> FeaturesBoard </a>
-          <a href="#definition-SearchLogs"> SearchLogs </a>
-          <a href="#definition-MediaLogs"> MediaLogs </a>
-          <a href="#definition-Admins"> Admins </a>
+          <a href="#definition-mpUser"> mpUser </a>
+          <a href="#definition-mpMedia"> mpMedia </a>
+          <a href="#definition-mpBoard"> mpBoard </a>
+          <a href="#definition-mpConfirmedBasket"> mpConfirmedBasket </a>
+          <a href="#definition-mpFeaturesBoard"> mpFeaturesBoard </a>
+          <a href="#definition-mpSearchLogs"> mpSearchLogs </a>
+          <a href="#definition-mpMediaLogs"> mpMediaLogs </a>
         </nav>
       </div>
       <div id="docs" class="row collapse expanded drawer" data-drawer>
@@ -2279,9 +2277,9 @@
             </div>
           </div>
           <h1>Schema Definitions</h1>
-          <div id="definition-User" class="definition panel" data-traverse-target="definition-User">
+          <div id="definition-mpUser" class="definition panel" data-traverse-target="definition-mpUser">
             <h2 class="panel-title">
-              <a name="/definitions/User"></a>User:
+              <a name="/definitions/mpUser"></a>mpUser:
               <span class="json-property-type">
                 <span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
@@ -2291,11 +2289,6 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="addreses">
-                      <span class="json-property-name">addreses:</span>
-                      <span class="json-property-type">object[]</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
                     <dt data-property-name="_id">
                       <span class="json-property-name">_id:</span>
                       <span class="json-property-type">string</span>
@@ -2359,13 +2352,6 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;addreses&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;pincode&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
-      <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ],
   <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
   <span class="hljs-attr">&quot;accessToken&quot;</span>: <span class="hljs-number">829739238729</span>,
   <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;chintan&quot;</span>,
@@ -2385,9 +2371,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-Media" class="definition panel" data-traverse-target="definition-Media">
+          <div id="definition-mpMedia" class="definition panel" data-traverse-target="definition-mpMedia">
             <h2 class="panel-title">
-              <a name="/definitions/Media"></a>Media:
+              <a name="/definitions/mpMedia"></a>mpMedia:
               <span class="json-property-type">
                 <span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
@@ -2481,9 +2467,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-Board" class="definition panel" data-traverse-target="definition-Board">
+          <div id="definition-mpBoard" class="definition panel" data-traverse-target="definition-mpBoard">
             <h2 class="panel-title">
-              <a name="/definitions/Board"></a>Board:
+              <a name="/definitions/mpBoard"></a>mpBoard:
               <span class="json-property-type">
                 <span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
@@ -2568,9 +2554,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-ConfirmedBasket" class="definition panel" data-traverse-target="definition-ConfirmedBasket">
+          <div id="definition-mpConfirmedBasket" class="definition panel" data-traverse-target="definition-mpConfirmedBasket">
             <h2 class="panel-title">
-              <a name="/definitions/ConfirmedBasket"></a>ConfirmedBasket:
+              <a name="/definitions/mpConfirmedBasket"></a>mpConfirmedBasket:
               <span class="json-property-type">
                 <span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
@@ -2645,54 +2631,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-Config" class="definition panel" data-traverse-target="definition-Config">
+          <div id="definition-mpFeaturesBoard" class="definition panel" data-traverse-target="definition-mpFeaturesBoard">
             <h2 class="panel-title">
-              <a name="/definitions/Config"></a>Config:
-              <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-              </span>
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="json-schema-properties">
-                  <dl>
-                    <dt data-property-name="_id">
-                      <span class="json-property-name">_id:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-format">(objectID)</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="name">
-                      <span class="json-property-name">name:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="value">
-                      <span class="json-property-name">value:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                  </dl>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;_id&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;about&quot;</span>,
-  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;Find high resolution royalty-free images, editorial stock photos, vector art, video footage clips and stock music licensing at the richest image search photo library online.&quot;</span>
-}
-</code></pre>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="definition-FeaturesBoard" class="definition panel" data-traverse-target="definition-FeaturesBoard">
-            <h2 class="panel-title">
-              <a name="/definitions/FeaturesBoard"></a>FeaturesBoard:
+              <a name="/definitions/mpFeaturesBoard"></a>mpFeaturesBoard:
               <span class="json-property-type">
                 <span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
@@ -2739,9 +2680,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-SearchLogs" class="definition panel" data-traverse-target="definition-SearchLogs">
+          <div id="definition-mpSearchLogs" class="definition panel" data-traverse-target="definition-mpSearchLogs">
             <h2 class="panel-title">
-              <a name="/definitions/SearchLogs"></a>SearchLogs:
+              <a name="/definitions/mpSearchLogs"></a>mpSearchLogs:
               <span class="json-property-type">
                 <span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
@@ -2801,9 +2742,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-MediaLogs" class="definition panel" data-traverse-target="definition-MediaLogs">
+          <div id="definition-mpMediaLogs" class="definition panel" data-traverse-target="definition-mpMediaLogs">
             <h2 class="panel-title">
-              <a name="/definitions/MediaLogs"></a>MediaLogs:
+              <a name="/definitions/mpMediaLogs"></a>mpMediaLogs:
               <span class="json-property-type">
                 <span class="json-property-type">object</span>
                 <span class="json-property-range" title="Value limits"></span>
@@ -2860,38 +2801,6 @@
   <span class="hljs-attr">&quot;media&quot;</span>: <span class="hljs-string">&quot;507f1f77bcf86cd799439011&quot;</span>,
   <span class="hljs-attr">&quot;event&quot;</span>: <span class="hljs-string">&quot;ViewDetailPage&quot;</span>,
   <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;2016-10-05T14:35:33.593Z&quot;</span>
-}
-</code></pre>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="definition-Admins" class="definition panel" data-traverse-target="definition-Admins">
-            <h2 class="panel-title">
-              <a name="/definitions/Admins"></a>Admins:
-              <span class="json-property-type">
-                <span class="json-property-type">object</span>
-                <span class="json-property-range" title="Value limits"></span>
-              </span>
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="json-schema-properties">
-                  <dl>
-                    <dt data-property-name="name">
-                      <span class="json-property-name">name:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                  </dl>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
